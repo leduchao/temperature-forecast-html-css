@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Multi-Page Web App</title>
+
+        <!-- css link main.css -->
+        <link rel="stylesheet" href="main.css" />
+
+        <!-- bootstrap css -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        />
+
+        <!-- bootstrap icon -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+
+        <!-- bootstrap js -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+
+    <body class="bg-light">
+        <div class="container">
+            <div class="text-center py-3">
+                <h1>Made by LABone and IoTVison</h1>
+            </div>
+            <!-- nút bấm chuyển giữa các tab -->
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button
+                        class="nav-link"
+                        id="nav-info-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#nav-info"
+                        type="button"
+                        role="tab"
+                        aria-controls="nav-info"
+                        aria-selected="true"
+                    >
+                        Enter informations
+                    </button>
+                    <button
+                        class="nav-link active"
+                        id="nav-login-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#nav-login"
+                        type="button"
+                        role="tab"
+                        aria-controls="nav-login"
+                        aria-selected="false"
+                    >
+                        Login
+                    </button>
+                    <button
+                        class="nav-link"
+                        id="nav-temperature-tab"
+                        data-bs-toggle="tab"
+                        data-bs-target="#nav-temperature"
+                        type="button"
+                        role="tab"
+                        aria-controls="nav-temperature"
+                        aria-selected="false"
+                    >
+                        Temperature forecast
+                    </button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <!-- Enter information -->
+                <div
+                    class="tab-pane fade"
+                    id="nav-info"
+                    role="tabpanel"
+                    aria-labelledby="nav-info-tab"
+                    tabindex="0"
+                >
+                    <div id="info" class="page visible py-3">
+                        <div class="text-center mb-4">
+                            <h5 id="macID1">macID: ..........</h5>
+                        </div>
+
+                        <!-- <h4>Option 1:</h4> -->
+                        <div class="mb-4 bg-white py-4 px-5 shadow rounded">
+                            <div class="mb-4">
+                                <label for="inputDate" class="col-form-label"
+                                    >Date</label
+                                >
+                                <input
+                                    type="datetime-local"
+                                    id="inputHour"
+                                    class="form-control"
+                                    aria-describedby="hourHelpInline"
+                                />
+                            </div>
+
+                            <div class="d-flex justify-content-center mb-4">
+                                <button
+                                    id="sendTime"
+                                    class="btn btn-primary w-50"
+                                >
+                                    Enter
+                                </button>
+                            </div>
+
+                            <div class="d-flex justify-content-end">
+                                <button
+                                    id="backPage1"
+                                    class="btn btn-outline-dark"
+                                >
+                                    Next
+                                    <i class="bi bi-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- <h4>Option 2:</h4>
+                        <div class="row g-3-lg">
+                            <div class="col-4">
+                                <label for="inputHour" class="col-form-label"
+                                    >Hour</label
+                                >
+                                <input
+                                    type="number"
+                                    id="inputhour"
+                                    class="form-control"
+                                    aria-describedby="hourHelpInline"
+                                />
+                            </div>
+
+                            <div class="col-4">
+                                <label for="inputMinute" class="col-form-label"
+                                    >Minute</label
+                                >
+                                <input
+                                    type="number"
+                                    id="inputMinute"
+                                    class="form-control"
+                                    aria-describedby="minuteHelpInline"
+                                />
+                            </div>
+                            <div class="col-4">
+                                <label for="inputSecond" class="col-form-label"
+                                    >Second</label
+                                >
+                                <input
+                                    type="number"
+                                    id="inputSecond"
+                                    class="form-control"
+                                    aria-describedby="secondHelpInline"
+                                />
+                            </div>
+                        </div> -->
+
+                        <!-- <div class="row g-3-lg">
+                            <div class="col-4">
+                                <label for="inputDay" class="col-form-label"
+                                    >Day</label
+                                >
+                                <input
+                                    type="number"
+                                    id="inputDay"
+                                    class="form-control"
+                                    aria-describedby="dayHelpInline"
+                                />
+                            </div>
+
+                            <div class="col-4">
+                                <label for="inputMonth" class="col-form-label"
+                                    >Month</label
+                                >
+                                <input
+                                    type="number"
+                                    id="inputMonth"
+                                    class="form-control"
+                                    aria-describedby="monthHelpInline"
+                                />
+                            </div>
+                            <div class="col-4">
+                                <label for="inputYear" class="col-form-label"
+                                    >Year</label
+                                >
+                                <input
+                                    type="number"
+                                    id="inputYear"
+                                    class="form-control"
+                                    aria-describedby="yearHelpInline"
+                                />
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+
+                <!-- Login -->
+                <div
+                    class="tab-pane fade show active"
+                    id="nav-login"
+                    role="tabpanel"
+                    aria-labelledby="nav-login-tab"
+                    tabindex="0"
+                >
+                    <div id="login" class="py-3">
+                        <div class="text-center mb-4">
+                            <h5 id="macID1">macID: ..........</h5>
+                        </div>
+                        <div class="bg-white px-5 py-4 shadow rounded">
+                            <div class="text-center">
+                                <h2>LOGIN</h2>
+                                <p>This is mandatory</p>
+                            </div>
+                            <form action="login" class="mb-4">
+                                <div class="form-floating mb-4">
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="floatingInput"
+                                        placeholder="name@example.com"
+                                    />
+                                    <label for="floatingInput"
+                                        >Email address</label
+                                    >
+                                </div>
+                                <div class="form-floating mb-4">
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        id="floatingPassword"
+                                        placeholder="Password"
+                                    />
+                                    <label for="floatingPassword"
+                                        >Password</label
+                                    >
+                                </div>
+                                <button
+                                    id="loginBtn"
+                                    type="submit"
+                                    class="btn btn-primary w-100"
+                                >
+                                    Login
+                                </button>
+                            </form>
+
+                            <div class="button-group">
+                                <button
+                                    id="backPage1"
+                                    class="btn btn-outline-dark"
+                                >
+                                    <i class="bi bi-arrow-left"></i>
+                                    Back
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Temperature -->
+                <div
+                    class="tab-pane fade"
+                    id="nav-temperature"
+                    role="tabpanel"
+                    aria-labelledby="nav-temperature-tab"
+                    tabindex="0"
+                >
+                    <div id="temperatue" class="py-3">
+                        <div class="text-center mb-4">
+                            <h5 id="macID1">macID: ..........</h5>
+                        </div>
+
+                        <div class="bg-white py-4 px-5 shadow rounded">
+                            <div class="text-center mb-4">
+                                <h2 id="tempTitle">Temperature</h2>
+                            </div>
+
+                            <div class="d-flex justify-content-evenly mb-4">
+                                <button
+                                    id="leftArrow"
+                                    class="btn btn-outline-dark"
+                                >
+                                    <i class="bi bi-caret-left"></i>
+                                </button>
+                                <h3 id="temperature">30.5</h3>
+                                <button
+                                    id="rightArrow"
+                                    class="btn btn-outline-dark"
+                                >
+                                    <i class="bi bi-caret-right"></i>
+                                </button>
+                            </div>
+
+                            <div class="row gx-3 mb-4">
+                                <div class="col-md-9 col-12 mb-3 mb-md-0">
+                                    <input
+                                        type="text"
+                                        id="calib"
+                                        placeholder="Enter calib"
+                                        class="form-control"
+                                    />
+                                </div>
+
+                                <div class="col-md-3 col-12">
+                                    <button
+                                        id="sendCalib"
+                                        class="btn btn-primary w-100"
+                                    >
+                                        Enter
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="button-group">
+                                <button
+                                    id="backPage1"
+                                    class="btn btn-outline-dark"
+                                >
+                                    <i class="bi bi-arrow-left"></i>
+                                    Back
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
